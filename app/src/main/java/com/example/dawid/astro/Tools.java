@@ -14,12 +14,16 @@ public class Tools {
     private static final String LONGITUDE = "longitudeField";
     private static final String LATITUDE = "latitudeField";
     private static final String REFRESH = "refreshField";
+    private static final String TEMPERATUREUNIT = "temperatureField";
 
     static int getRefreshRate(final Context context) {
         SharedPreferences config = context.getSharedPreferences(NAME, Activity.MODE_PRIVATE);
         return Integer.parseInt(config.getString(REFRESH, "15")) * 60000;
     }
-
+    static String getTemperatureunit(final Context context) {
+        SharedPreferences config = context.getSharedPreferences(NAME, Activity.MODE_PRIVATE);
+        return config.getString(TEMPERATUREUNIT, "");
+    }
     static String getLatitude(final Context context) {
         SharedPreferences config = context.getSharedPreferences(NAME, Activity.MODE_PRIVATE);
         return config.getString(LATITUDE, "");

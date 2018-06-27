@@ -20,7 +20,7 @@ public class YahooWeatherService {
     private  WeatherServiceCallback callback;
     private String location;
     private Exception error;
-    private String temperatureUnit = "C";
+    private String temperatureUnit;
 
     public String getTemperatureUnit() {
         return temperatureUnit;

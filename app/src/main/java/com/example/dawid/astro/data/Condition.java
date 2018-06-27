@@ -26,4 +26,9 @@ public class Condition implements JSONPopulator {
         description=data.optString("text");
 
     }
+
+    @Override
+    public JSONObject toJSON() {
+        return null;
+    }
 }

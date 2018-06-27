@@ -6,8 +6,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.dawid.astro.service.YahooWeatherService;
+
 public class Apka extends AppCompatActivity {
     FragmentPagerAdapter adapterViewPager;
+    private YahooWeatherService weatherService;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

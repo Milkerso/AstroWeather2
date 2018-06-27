@@ -6,6 +6,10 @@
     <string name="Longitude">Długość</string>
     <string name="RefreshRate">Odśw(s)</string>
     <string name="Accept">Accept</string>
+    <string-array name="temperature">
+        <item>c</item>
+        <item>f</item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -13,4 +17,6 @@
     <string name="condition">Temperature</string>
     <string name="location">Location</string>
     <string name="temperature">Temperature</string>
+    <string name="temperatureText">Temp Unit</string>
+    <string name="Pressure">Cisnienie</string>
 </resources>

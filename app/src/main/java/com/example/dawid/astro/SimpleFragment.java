@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.astrocalculator.AstroCalculator;
 import com.example.dawid.astro.data.Chanel;
 import com.example.dawid.astro.data.Item;
 import com.example.dawid.astro.service.WeatherServiceCallback;
@@ -21,7 +22,10 @@ public class SimpleFragment extends Fragment implements WeatherServiceCallback {
     private TextView temperatureTextView;
     private TextView conditionTextView;
     private TextView locationTextView;
-
+    private TextView longitude;
+    private TextView Lattitude;
+    private TextView Pressure;
+    private AstroCalculator.SunInfo simpleInfo;
     private YahooWeatherService service;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -48,8 +52,14 @@ public class SimpleFragment extends Fragment implements WeatherServiceCallback {
         weatherIconImageView=(ImageView)view.findViewById(R.id.weatherIconImageView);
         temperatureTextView=(TextView)view.findViewById(R.id.temperatureTextView);
         conditionTextView=(TextView)view.findViewById(R.id.conditionTextView);
+        Pressure=(TextView) view.findViewById(R.id.Pressure);
+        longitude=(TextView)view.findViewById(R.id.longitude);
+        Lattitude=(TextView)view.findViewById(R.id.Lattidude);
         locationTextView=(TextView)view.findViewById(R.id.locationTextView);
+
         service = new YahooWeatherService(this);
+        String in = Tools.getTemperatureunit(getContext());
+        service.setTemperatureUnit(in);
 
 
         service.refreshWeather("Warszawa");
@@ -67,6 +77,9 @@ public class SimpleFragment extends Fragment implements WeatherServiceCallback {
     temperatureTextView.setText(item.getCondition().getTemperature()+ "\u00B0"+channel.getUnits().getTemperature());
     conditionTextView.setText(item.getCondition().getDescription());
     locationTextView.setText(service.getLocation());
+    longitude.setText(channel.getItem().getLatitude());
+    Lattitude.setText(channel.getItem().getLongitude());
+    Pressure.setText(channel.getAtmosphera().getPressure());
     }
 
     @Override

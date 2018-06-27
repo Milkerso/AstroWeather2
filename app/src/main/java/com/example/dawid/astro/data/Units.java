@@ -12,4 +12,9 @@ public class Units implements JSONPopulator {
     public void populate(JSONObject data) {
     temperature=data.optString("temperature");
     }
+
+    @Override
+    public JSONObject toJSON() {
+        return null;
+    }
 }
