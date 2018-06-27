@@ -9,6 +9,11 @@ public class Item implements JSONPopulator {
     private String latitude;
     private String longitude;
 
+    public Condition[] getForecast() {
+        return forecast;
+    }
+
+    private Condition[] forecast;
     public Condition getCondition() {
         return condition;
     }
@@ -27,6 +32,19 @@ public class Item implements JSONPopulator {
 ;
         latitude = data.optString("lat");
         longitude = data.optString("long");
+
+        JSONArray forecastData = data.optJSONArray("forecast");
+
+        forecast = new Condition[forecastData.length()];
+
+        for (int i = 0; i < forecastData.length(); i++) {
+            forecast[i] = new Condition();
+            try {
+                forecast[i].populate(forecastData.getJSONObject(i));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
     @Override
     public JSONObject toJSON() {
@@ -35,6 +53,7 @@ public class Item implements JSONPopulator {
 
             data.put("lat", latitude);
             data.put("long", longitude);
+            data.put("forecast", new JSONArray(forecast));
 
 
         } catch (JSONException e) {
