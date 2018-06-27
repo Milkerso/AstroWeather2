@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:id="@+id/Lattidude">
+
+
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:text="@string/Lattitude"
+            android:id="@+id/tvAppName"
+            android:layout_marginTop="@dimen/marginTop"
+            android:layout_marginLeft="@dimen/marginLeft"
+            android:textSize="@dimen/textSize"
+
+
+
+            />
+        <EditText
+            android:layout_width="@dimen/width"
+            android:layout_height="wrap_content"
+            android:text="@dimen/value"
+            android:textAlignment="center"
+            android:id="@+id/btKonfiguracja"
+            android:inputType="number"
+            android:layout_marginLeft="@dimen/marginRight"
+            android:layout_marginTop="@dimen/marginTop"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:id="@+id/Longitude"
+        android:layout_below="@id/Lattidude"
+        >
+
+
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:text="@string/Longitude"
+            android:id="@+id/tvLongitude"
+            android:layout_marginTop="@dimen/marginTop"
+            android:layout_marginLeft="@dimen/marginLeft"
+            android:textSize="@dimen/textSize"
+            />
+        <EditText
+            android:layout_width="@dimen/width"
+            android:layout_height="wrap_content"
+            android:text="@dimen/value"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:id="@+id/etLongitude"
+            android:layout_marginLeft="@dimen/marginRight"
+            android:layout_marginTop="@dimen/marginTop"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:id="@+id/RefreshRate"
+        android:layout_below="@id/Longitude"
+        >
+
+
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:text="@string/RefreshRate"
+            android:id="@+id/tvRefreshRate"
+            android:layout_marginTop="@dimen/marginTop"
+            android:layout_marginLeft="@dimen/marginLeft"
+            android:textSize="@dimen/textSize"
+            />
+        <EditText
+            android:layout_width="@dimen/width"
+            android:layout_height="wrap_content"
+            android:text="@dimen/value"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:id="@+id/etRefreshRate"
+            android:layout_marginLeft="@dimen/marginRight"
+            android:layout_marginTop="@dimen/marginTop"
+            />
+
+    </LinearLayout>
+    <Button
+        android:layout_width="@dimen/width"
+        android:layout_height="wrap_content"
+        android:text="@string/Accept"
+        android:id="@+id/btAccept"
+        android:layout_below="@id/RefreshRate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/marginTop"
+        android:onClick="click"
+
+        />
+
+
+
+</RelativeLayout>

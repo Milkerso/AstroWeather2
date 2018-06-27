@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Astro</string>
+    <string name="konfiguracja">Konfiguracja</string>
+    <string name="Apka">Apka</string>
+    <string name="Lattitude">Szerekosc</string>
+    <string name="Longitude">Długość</string>
+    <string name="RefreshRate">Odśw(s)</string>
+    <string name="Accept">Accept</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_simple_fragment">SimpleFragment</string>
+    <string name="condition">Temperature</string>
+    <string name="location">Location</string>
+    <string name="temperature">Temperature</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="width">150dp</dimen>
+    <dimen name="marginTop">50dp</dimen>
+    <dimen name="marginLeft">10dp</dimen>
+    <dimen name="marginRight">50dp</dimen>
+    <dimen name="textSize">30dp</dimen>
+    <dimen name="value">7</dimen>
+
+</resources>

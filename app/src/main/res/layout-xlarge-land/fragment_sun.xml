@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".moon">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="left"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="60dp"
+        >
+        <TextView
+            android:layout_marginTop="40dp"
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Azymut Wschód Słońca"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/sunRiseAzimuth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:layout_marginBottom="28dp"
+            />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Czas Wschodu słońca"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/sunRiseTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:layout_marginBottom="28dp"
+            />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Azymut Zachodu Słońca"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/sunsetAzimuth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:layout_marginBottom="28dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="right"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="60dp"
+        >
+        <TextView
+            android:layout_marginTop="40dp"
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Czas Zachodu Słońca"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/sunSetTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:layout_marginBottom="28dp"
+            />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Dlugosc dnia"
+            android:textSize="50dp"
+            android:textStyle="bold"
+
+            />
+        <TextView
+            android:id="@+id/twilightMorningTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:layout_marginBottom="28dp"
+            />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Długość nocy"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/twilightEveningTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            />
+    </LinearLayout>
+
+
+
+</RelativeLayout>

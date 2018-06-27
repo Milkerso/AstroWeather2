@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".moon">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="left"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="100dp"
+        >
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Czas Wschodu Księżyca"
+            android:textSize="45dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/moonRiseTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="45dp"
+            android:layout_marginBottom="28dp"
+            />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Czas Zachodu księżyca"
+            android:textSize="45dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/moonSetTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="45dp"
+            android:layout_marginBottom="28dp"
+            />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Najbliższa Nów księżyca"
+            android:textSize="45dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/nowDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="45dp"
+            android:layout_marginBottom="28dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="right"
+        android:layout_marginRight="30dp"
+        >
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Najbliższa pełnia księżyca"
+            android:textSize="45dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/fullMoonDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="45dp"
+            android:layout_marginBottom="28dp"
+            />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Faza księżyca"
+            android:textSize="45dp"
+            android:textStyle="bold"
+
+            />
+        <TextView
+            android:id="@+id/phaseMoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="45dp"
+            android:layout_marginBottom="28dp"
+            />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Dziń miesiąca syndomicznego"
+            android:textSize="45dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/syndomMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="45dp"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
