@@ -83,9 +83,9 @@ public class SimpleFragment extends Fragment implements WeatherServiceCallback {
         service = new YahooWeatherService(this);
         String in = Tools.getTemperatureunit(getContext());
         service.setTemperatureUnit(in);
+        String city=Tools.getCityeunit(getContext());
 
-
-        service.refreshWeather("Warszawa");
+        service.refreshWeather(city);
 
         return view;
     }
@@ -130,32 +130,32 @@ public class SimpleFragment extends Fragment implements WeatherServiceCallback {
                     j=i+1;
                     c++;
                 } else if (c == 1) {
-                    temperature=send.substring(j,i-1);
+                    temperature=send.substring(j,i);
                     j=i+1;
                     c++;
                 }
                 else if (c == 2) {
-                    condition=send.substring(j,i-1);
+                    condition=send.substring(j,i);
                     j=i+1;
                     c++;
                 }
                 else if (c == 3) {
-                    location=send.substring(j,i-1);
+                    location=send.substring(j,i);
                     j=i+1;
                     c++;
                 }
                 else if (c == 4) {
-                    longitude=send.substring(j,i-1);
+                    longitude=send.substring(j,i);
                     j=i+1;
                     c++;
                 }
                 else if (c == 5) {
-                    Lattitude=send.substring(j,i-1);
+                    Lattitude=send.substring(j,i);
                     j=i+1;
                     c++;
                 }
                 else if (c == 6) {
-                    Pressure=send.substring(j,i-1);
+                    Pressure=send.substring(j,i);
                     j=i+1;
                     c++;
                 }

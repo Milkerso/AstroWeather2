@@ -15,14 +15,20 @@ public class Tools {
     private static final String LATITUDE = "latitudeField";
     private static final String REFRESH = "refreshField";
     private static final String TEMPERATUREUNIT = "temperatureField";
+    private static final String CITYCHOICE = "citychoice";
 
     static int getRefreshRate(final Context context) {
         SharedPreferences config = context.getSharedPreferences(NAME, Activity.MODE_PRIVATE);
         return Integer.parseInt(config.getString(REFRESH, "15")) * 60000;
     }
+
     static String getTemperatureunit(final Context context) {
         SharedPreferences config = context.getSharedPreferences(NAME, Activity.MODE_PRIVATE);
         return config.getString(TEMPERATUREUNIT, "");
+    }
+    static String getCityeunit(final Context context) {
+        SharedPreferences config = context.getSharedPreferences(NAME, Activity.MODE_PRIVATE);
+        return config.getString(CITYCHOICE, "");
     }
     static String getLatitude(final Context context) {
         SharedPreferences config = context.getSharedPreferences(NAME, Activity.MODE_PRIVATE);

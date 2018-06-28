@@ -19,4 +19,5 @@
     <string name="temperature">Temperature</string>
     <string name="temperatureText">Temp Unit</string>
     <string name="Pressure">Cisnienie</string>
+    <string name="MapList">listaMiast</string>
 </resources>

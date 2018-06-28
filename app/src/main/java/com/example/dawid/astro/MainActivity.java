@@ -24,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(MainActivity.this, Apka.class);
                 startActivity(intent);
                 break;
+            case R.id.btMapList:
+                intent = new Intent(MainActivity.this, CityList.class);
+                startActivity(intent);
+                break;
         }
     }
 

@@ -42,5 +42,17 @@
         android:layout_marginTop="40dp"
         android:onClick="click"
         />
+    <Button
+        android:layout_width="@dimen/width"
+        android:layout_height="wrap_content"
+        android:text="@string/MapList"
+        android:id="@+id/btMapList"
+        android:layout_below="@id/btApka"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/marginTop"
+        android:onClick="click"
+
+
+        />
 
 </RelativeLayout>
