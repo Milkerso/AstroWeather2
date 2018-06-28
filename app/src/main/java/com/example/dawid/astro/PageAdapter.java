@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 
     public class PageAdapter extends FragmentPagerAdapter {
-        private static int NUM_ITEMS = 4;
+        private static int NUM_ITEMS = 5;
 
         public PageAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
@@ -35,7 +35,9 @@ import android.view.ViewGroup;
                     return Time.newInstance("2", "Page # 3");
                 case 3: // Fragment # 0 - This will show FirstFragment different title
                     return SimpleFragment.newInstance("3", "Page # 4");
-                    default:
+                case 4: // Fragment # 0 - This will show FirstFragment different title
+                    return WeatherForNextDay.newInstance("4", "Page # 5");
+                default:
                     return null;
             }
         }

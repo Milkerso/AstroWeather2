@@ -20,4 +20,8 @@
     <string name="temperatureText">Temp Unit</string>
     <string name="Pressure">Cisnienie</string>
     <string name="MapList">listaMiast</string>
+    <string name="day">day</string>
+    <string name="high">high</string>
+    <string name="low">low</string>
+    <string name="condition_icon">Condition_icon</string>
 </resources>

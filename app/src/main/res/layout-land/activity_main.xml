@@ -11,11 +11,21 @@
         android:layout_height="wrap_content"
         android:text="AstroWeather"
         android:id="@+id/tvAppName"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:textSize="30dp"
 
 
+        />
+    <Button
+        android:layout_width="@dimen/width"
+        android:layout_height="wrap_content"
+        android:text="@string/Apka"
+        android:id="@+id/btApka"
+        android:layout_below="@id/btKonfiguracja"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/marginTop"
+        android:onClick="click"
         />
 
     <Button
@@ -25,7 +35,7 @@
         android:id="@+id/btKonfiguracja"
         android:layout_below="@id/tvAppName"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:onClick="click"
 
 
@@ -39,7 +49,7 @@
         android:id="@+id/btApka"
         android:layout_below="@id/btKonfiguracja"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:onClick="click"
         />
     <Button
@@ -47,9 +57,9 @@
         android:layout_height="wrap_content"
         android:text="@string/MapList"
         android:id="@+id/btMapList"
-        android:layout_below="@id/btApka"
+        android:layout_below="@id/btKonfiguracja"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/marginTop"
+        android:layout_marginTop="20dp"
         android:onClick="click"
 
 
