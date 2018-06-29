@@ -6,6 +6,7 @@
     <string name="Longitude">Długość</string>
     <string name="RefreshRate">Odśw(s)</string>
     <string name="Accept">Accept</string>
+    <string name="temperature_output">%1$d&#176;%2$s</string>
     <string-array name="temperature">
         <item>c</item>
         <item>f</item>
@@ -24,4 +25,5 @@
     <string name="high">high</string>
     <string name="low">low</string>
     <string name="condition_icon">Condition_icon</string>
+    <string name="title_activity_advanced_fragment">advancedFragment</string>
 </resources>

@@ -10,6 +10,7 @@
         android:orientation="vertical"
         android:gravity="center"
         android:layout_marginLeft="50dp"
+        android:background="@drawable/time"
         >
         <TextView
             android:layout_marginTop="40dp"

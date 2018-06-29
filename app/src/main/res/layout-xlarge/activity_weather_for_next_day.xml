@@ -16,6 +16,7 @@
         app:srcCompat="@drawable/icon_na"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:background="@drawable/weather"
         android:layout_marginTop="10dp"
         android:id="@+id/weatherIconImageView"
         android:contentDescription="Condition Icon"
@@ -63,7 +64,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/highTemperatureTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="250dp"
         android:baselineAligned="false">
 
         <LinearLayout

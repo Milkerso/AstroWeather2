@@ -7,43 +7,48 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    android:paddingBottom="16dp"
     android:background="@drawable/weather"
+    android:paddingBottom="16dp"
     tools:context="com.example.dawid.astro.WeatherForNextDay">
+
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/icon_na"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
         android:id="@+id/weatherIconImageView"
+        android:layout_width="318dp"
+        android:layout_height="237dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="0dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:adjustViewBounds="true"
         android:contentDescription="Condition Icon"
-        android:adjustViewBounds="true" />
+        app:srcCompat="@drawable/icon_na" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/day"
         android:id="@+id/dayTextView"
-        android:layout_below="@+id/weatherIconImageView"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:typeface="serif"
-        android:textAllCaps="true"
-        android:fontFamily="sans-serif-condensed"
-        android:layout_marginTop="10dp" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/high"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/highTemperatureTextView"
+        android:layout_marginTop="53dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/day"
+        android:textAllCaps="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <TextView
         android:id="@+id/highTemperatureTextView"
-        android:layout_below="@+id/dayTextView"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="5dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="489dp"
+        android:layout_marginTop="112dp"
+        android:paddingTop="5dp"
+        android:text="@string/high"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -63,7 +68,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/highTemperatureTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="200dp"
         android:baselineAligned="false">
 
         <LinearLayout

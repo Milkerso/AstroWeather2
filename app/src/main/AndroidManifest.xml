@@ -26,7 +26,11 @@
             android:label="@string/title_activity_simple_fragment"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CityList" />
-        <activity android:name=".WeatherForNextDay"></activity>
+        <activity android:name=".WeatherForNextDay" />
+        <activity
+            android:name=".advancedFragment"
+            android:label="@string/title_activity_advanced_fragment"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

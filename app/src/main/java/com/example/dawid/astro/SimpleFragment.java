@@ -76,10 +76,7 @@ public class SimpleFragment extends Fragment implements WeatherServiceCallback {
         longitudeTextView=(TextView)view.findViewById(R.id.longitude);
         LattitudeTextView=(TextView)view.findViewById(R.id.Lattidude);
         locationTextView=(TextView)view.findViewById(R.id.locationTextView);
-        if(!isInternetAvailable())
-        {
-            Toast.makeText(getActivity(),"Brak Polaczenia",Toast.LENGTH_SHORT).show();
-        }
+
         service = new YahooWeatherService(this);
         String in = Tools.getTemperatureunit(getContext());
         service.setTemperatureUnit(in);
@@ -96,11 +93,12 @@ public class SimpleFragment extends Fragment implements WeatherServiceCallback {
         int resourceId= getResources().getIdentifier("drawable/icon_"+item.getCondition().getCode(),null,getActivity().getPackageName());
     @SuppressWarnings("deprecation")
     Condition[] forecast = channel.getItem().getForecast();
+
         int weatherIconImageResource = getResources().getIdentifier("icon_" + forecast[0].getCode(), "drawable", getActivity().getPackageName());
     temperature=item.getCondition().getTemperature()+ "\u00B0"+channel.getUnits().getTemperature();
     condition=item.getCondition().getDescription();
     location=service.getLocation();
-    longitude=channel.getItem().getLatitude();
+    longitude=Integer.toString(forecast[1].getCode());
     Lattitude=channel.getItem().getLongitude();
     Pressure=channel.getAtmosphera().getPressure();
     Pressure=Double.toString(Double.parseDouble(Pressure)/33.86);

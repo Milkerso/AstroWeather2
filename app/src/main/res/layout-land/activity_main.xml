@@ -17,16 +17,8 @@
 
 
         />
-    <Button
-        android:layout_width="@dimen/width"
-        android:layout_height="wrap_content"
-        android:text="@string/Apka"
-        android:id="@+id/btApka"
-        android:layout_below="@id/btKonfiguracja"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/marginTop"
-        android:onClick="click"
-        />
+
+
 
     <Button
         android:layout_width="@dimen/width"

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/weather"
     tools:context=".SimpleFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -12,6 +13,7 @@
         android:orientation="vertical"
         android:gravity="center"
         >
+
         <ImageView
             android:id="@+id/weatherIconImageView"
             android:layout_width="wrap_content"
@@ -84,15 +86,16 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
 
             />
+
         <TextView
             android:id="@+id/textView3"
-            android:layout_below="@id/Lattidude"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="60dp"
+            android:layout_below="@id/Lattidude"
             android:layout_marginLeft="20dp"
             android:text="@string/Pressure"
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="60dp"
 
 
             />

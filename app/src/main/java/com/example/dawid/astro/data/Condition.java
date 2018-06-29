@@ -6,9 +6,23 @@ public class Condition implements JSONPopulator {
     private int code;
     private int temperature;
     private String description;
-
+    private int highTemperature;
+    private int lowTemperature;
+    private String day;
     public int getCode() {
         return code;
+    }
+
+    public int getHighTemperature() {
+        return highTemperature;
+    }
+
+    public int getLowTemperature() {
+        return lowTemperature;
+    }
+
+    public String getDay() {
+        return day;
     }
 
     public int getTemperature() {
@@ -24,6 +38,9 @@ public class Condition implements JSONPopulator {
         code=data.optInt("code");
         temperature=data.optInt("temp");
         description=data.optString("text");
+        highTemperature = data.optInt("high");
+        lowTemperature = data.optInt("low");
+        day = data.optString("day");
 
     }
 

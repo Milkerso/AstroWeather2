@@ -35,9 +35,9 @@ public class Item implements JSONPopulator {
 
         JSONArray forecastData = data.optJSONArray("forecast");
 
-        forecast = new Condition[forecastData.length()];
+        forecast = new Condition[6];
 
-        for (int i = 0; i < forecastData.length(); i++) {
+        for (int i = 0; i < 6; i++) {
             forecast[i] = new Condition();
             try {
                 forecast[i].populate(forecastData.getJSONObject(i));
@@ -49,16 +49,7 @@ public class Item implements JSONPopulator {
     @Override
     public JSONObject toJSON() {
         JSONObject data = new JSONObject();
-        try {
 
-            data.put("lat", latitude);
-            data.put("long", longitude);
-            data.put("forecast", new JSONArray(forecast));
-
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
         return data;
     }
 }

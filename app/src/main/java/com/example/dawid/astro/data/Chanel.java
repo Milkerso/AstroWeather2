@@ -6,12 +6,16 @@ import org.json.JSONObject;
 public class Chanel implements JSONPopulator {
     private  Units units;
     private  Item item;
+    private  Wind wind;
 
     public Atmosphera getAtmosphera() {
         return atmosphera;
     }
 
     private  Atmosphera atmosphera;
+    public Wind getWind() {
+        return wind;
+    }
     public Units getUnits() {
         return units;
     }
@@ -25,6 +29,9 @@ public class Chanel implements JSONPopulator {
         units= new Units();
         units.populate(data.optJSONObject("units"));
 
+        wind = new Wind();
+        wind.populate(data.optJSONObject("wind"));
+
         item=new Item();
         item.populate(data.optJSONObject("item"));
 
@@ -37,15 +44,7 @@ public class Chanel implements JSONPopulator {
     public JSONObject toJSON() {
         JSONObject data = new JSONObject();
 
-        try {
-            data.put("atmosphere", atmosphera.toJSON());
 
-            data.put("units", units.toJSON());
-            data.put("item", item.toJSON());
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
         return data;
     }

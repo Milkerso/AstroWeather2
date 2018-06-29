@@ -7,53 +7,51 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvAppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+
+
         android:text="AstroWeather"
-        android:id="@+id/tvAppName"
-        android:layout_marginTop="100dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="80dp"
-
-
-        />
+        android:textSize="80dp" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/konfiguracja"
         android:id="@+id/btKonfiguracja"
-        android:layout_below="@id/tvAppName"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="169dp"
         android:onClick="click"
-        android:textSize="80dp"
 
 
-        />
+        android:text="@string/konfiguracja"
+        android:textSize="80dp" />
 
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/Apka"
         android:id="@+id/btApka"
-        android:layout_below="@id/btKonfiguracja"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:onClick="click"
-        android:textSize="80dp"
-        />
-    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/MapList"
-        android:id="@+id/btMapList"
-        android:layout_below="@id/btApka"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="227dp"
         android:onClick="click"
-        android:textSize="80dp"
-        />
+        android:text="@string/Apka"
+        android:textSize="80dp" />
+
+    <Button
+        android:id="@+id/btMapList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="77dp"
+        android:onClick="click"
+        android:text="@string/MapList"
+        android:textSize="80dp" />
 
 </RelativeLayout>
