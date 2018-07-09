@@ -48,4 +48,5 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         String query = "Delete from " + tableName + " where " + cityName + " ='"+ name + "'";
         db.execSQL(query);
     }
+
 }

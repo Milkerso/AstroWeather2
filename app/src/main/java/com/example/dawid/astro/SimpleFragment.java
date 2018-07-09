@@ -1,10 +1,12 @@
 package com.example.dawid.astro;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +20,7 @@ import com.astrocalculator.AstroCalculator;
 import com.example.dawid.astro.data.Chanel;
 import com.example.dawid.astro.data.Condition;
 import com.example.dawid.astro.data.Item;
+import com.example.dawid.astro.database.DatabaseHelper;
 import com.example.dawid.astro.service.WeatherServiceCallback;
 import com.example.dawid.astro.service.YahooWeatherService;
 
@@ -28,6 +31,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.InetAddress;
+import java.util.ArrayList;
 
 public class SimpleFragment extends Fragment implements WeatherServiceCallback {
 
@@ -82,7 +86,10 @@ public class SimpleFragment extends Fragment implements WeatherServiceCallback {
         service.setTemperatureUnit(in);
         String city=Tools.getCityeunit(getContext());
 
-        service.refreshWeather(city);
+        String lattitude=Tools.getLatitude(getContext());
+        String longitude=Tools.getLongitude(getContext());
+        service.refreshWeather(lattitude,longitude);
+
 
         return view;
     }
@@ -97,9 +104,10 @@ public class SimpleFragment extends Fragment implements WeatherServiceCallback {
         int weatherIconImageResource = getResources().getIdentifier("icon_" + forecast[0].getCode(), "drawable", getActivity().getPackageName());
     temperature=item.getCondition().getTemperature()+ "\u00B0"+channel.getUnits().getTemperature();
     condition=item.getCondition().getDescription();
-    location=service.getLocation();
-    longitude=Integer.toString(forecast[1].getCode());
-    Lattitude=channel.getItem().getLongitude();
+
+    location= channel.getLocation().getCity();
+    longitude=channel.getItem().getLongitude();
+    Lattitude=channel.getItem().getLatitude();
     Pressure=channel.getAtmosphera().getPressure();
     Pressure=Double.toString(Double.parseDouble(Pressure)/33.86);
     String send=Integer.toString(weatherIconImageResource)+","+temperature+","+condition+","+location+","+longitude+","+Lattitude+","+Pressure+",  s";
@@ -110,6 +118,8 @@ public class SimpleFragment extends Fragment implements WeatherServiceCallback {
     longitudeTextView.setText(longitude);
     LattitudeTextView.setText(Lattitude);
     PressureTextView.setText(Pressure);
+   CityList cityList = new CityList();
+   wrzuc2(location);
     writeToFile(send,getContext());
     }
 
@@ -168,6 +178,7 @@ public class SimpleFragment extends Fragment implements WeatherServiceCallback {
         longitudeTextView.setText(longitude);
         LattitudeTextView.setText(Lattitude);
         PressureTextView.setText(Pressure);
+
         Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
         System.out.print(e.getMessage());
     }
@@ -179,6 +190,29 @@ public class SimpleFragment extends Fragment implements WeatherServiceCallback {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+    }
+    public void wrzuc2(String gCity) {
+        boolean isInBase = true;
+        DatabaseHelper databaseHelper = new DatabaseHelper(getContext());
+        Cursor data = databaseHelper.getData();
+        ArrayList<String> listData = new ArrayList<>();
+        while (data.moveToNext()) {
+
+            listData.add(data.getString(1));
+
+        }
+        for (int i = 0; i < listData.size(); i++) {
+            if (listData.contains(gCity)) {
+                isInBase = false;
+            }
+        }
+
+
+        if (isInBase) {
+            databaseHelper.addData(gCity);
+
+        }
+
     }
     private void writeToFile(String data,Context context) {
         try {

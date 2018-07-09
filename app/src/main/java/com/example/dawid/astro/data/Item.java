@@ -29,6 +29,7 @@ public class Item implements JSONPopulator {
     public void populate(JSONObject data) {
         condition=new Condition();
         condition.populate(data.optJSONObject("condition"));
+
 ;
         latitude = data.optString("lat");
         longitude = data.optString("long");
@@ -49,7 +50,16 @@ public class Item implements JSONPopulator {
     @Override
     public JSONObject toJSON() {
         JSONObject data = new JSONObject();
+        try {
 
+            data.put("lat", latitude);
+            data.put("long", longitude);
+            data.put("forecast", new JSONArray(forecast));
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         return data;
     }
 }

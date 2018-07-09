@@ -1,6 +1,7 @@
 package com.example.dawid.astro;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -46,23 +47,13 @@ public class konfiguracja extends AppCompatActivity implements View.OnClickListe
         latitudeConfig = (EditText) findViewById(R.id.btKonfiguracja);
         refreshConfig = (EditText) findViewById(R.id.etRefreshRate);
         temperatureUnit=(Spinner)findViewById(R.id.spTemperatureUnit);
-        temperatureUnit.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(konfiguracja.this, parent.getSelectedItem().toString(),Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
         Button okButton = (Button) findViewById(R.id.btAccept);
         okButton.setOnClickListener(this);
         loadConfig();
     }
 
     private void loadConfig() {
+
         longitudeConfig.setText(config.getString(LONGITUDE, ""));
 
         latitudeConfig.setText(config.getString(LATITUDE, ""));
@@ -100,6 +91,17 @@ public class konfiguracja extends AppCompatActivity implements View.OnClickListe
         longitude = check(longitudeConfig.getText().toString(), -180, 180);
         latitude = check(latitudeConfig.getText().toString(), -90, 90);
         refresh = check(refreshConfig.getText().toString(), 1, 60);
+        for(int i=0;i<longitude.length();i++)
+        {
+            if(longitude.charAt(i)==',')
+
+                longitude=  longitude.substring(0,i)+'.'+longitude.substring(i+1);
+        }
+        for(int i=0;i<latitude.length();i++)
+        {
+            if(latitude.charAt(i)==',')
+                latitude=latitude.substring(0,i)+'.'+latitude.substring(i+1);
+        }
         preferencesEditor.putString(LONGITUDE, longitude);
         preferencesEditor.putString(LATITUDE, latitude);
         preferencesEditor.putString(REFRESH, refresh);
@@ -119,7 +121,8 @@ public class konfiguracja extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.btAccept: {
                 saveConfig();
-
+                Intent intent = new Intent(konfiguracja.this, Apka.class);
+                startActivity(intent);
                 break;
             }
         }

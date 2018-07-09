@@ -1,5 +1,6 @@
 package com.example.dawid.astro;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -35,7 +36,9 @@ public class CityList extends AppCompatActivity implements WeatherServiceCallbac
     private YahooWeatherService service;
     private static final String LONGITUDE = "longitudeField";
     private static final String LATITUDE = "latitudeField";
-
+    private String city;
+    private String goodCity;
+    boolean checkCity;
     String location;
 
     String longitude;
@@ -57,6 +60,7 @@ public class CityList extends AppCompatActivity implements WeatherServiceCallbac
             public void onClick(View v) {
                 String newEntry = cityName.getText().toString();
                 if (newEntry.length() > 0) {
+                    goodCity=newEntry;
                     addData(newEntry);
                     cityName.setText("");
                     populateView();
@@ -80,6 +84,10 @@ public class CityList extends AppCompatActivity implements WeatherServiceCallbac
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 setCity(parent.getItemAtPosition(position).toString());
+                Intent intent = new Intent(CityList.this, Apka.class);
+                String strName = "4";
+                intent.putExtra("STRING_I_NEED", strName);
+                startActivity(intent);
             }
         });
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -96,28 +104,119 @@ public class CityList extends AppCompatActivity implements WeatherServiceCallbac
         service = new YahooWeatherService(this);
         service.setTemperatureUnit("c");
         service.refreshWeather(city);
+        this.city=city;
 
-        Toast.makeText(this, "City " + city + " was picked", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Miasto " + city + " zostalo wybrane", Toast.LENGTH_SHORT).show();
     }
 
     public void addData(String newEntry) {
-        databaseHelper.addData(newEntry);
+
+        service = new YahooWeatherService(this);
+        service.setTemperatureUnit("c");
+        service.refreshWeather(newEntry);
+        goodCity=newEntry;
+
     }
 
     @Override
     public void serviceSucces(Chanel channel) {
+
         SharedPreferences.Editor preferencesEditor = config.edit();
         location=service.getLocation();
         longitude=channel.getItem().getLatitude();
         Lattitude=channel.getItem().getLongitude();
+       for(int i=0;i<longitude.length();i++)
+       {
+           if(longitude.charAt(i)=='.')
+
+             longitude=  longitude.substring(0,i+2);
+       }
+        for(int i=0;i<Lattitude.length();i++)
+        {
+            if(Lattitude.charAt(i)=='.')
+             Lattitude=Lattitude.substring(0,i+2);
+        }
         preferencesEditor.putString(CITYCHOICE, location);
         preferencesEditor.putString(LONGITUDE, longitude);
         preferencesEditor.putString(LATITUDE, Lattitude);
         preferencesEditor.apply();
+        String gCity=channel.getLocation().getCity();
+        wrzuc(gCity);
+        goodCity=new String();
+
     }
 
     @Override
     public void serviceFailure(Exception e) {
 
+        goodCity=new String();
+        refresh();
+    }
+    public void wrzuc(String gCity)
+    {
+        boolean isInBase=true;
+        Cursor data = databaseHelper.getData();
+        ArrayList<String> listData = new ArrayList<>();
+        while(data.moveToNext()) {
+
+            listData.add(data.getString(1));
+
+        }
+        for(int i=0;i<listData.size();i++)
+        {
+            if(listData.contains(gCity))
+            {
+                isInBase=false;
+            }
+        }
+
+
+        if(isInBase) {
+            checkCity=true;
+        }
+        else
+        {
+
+            checkCity=false;
+        }
+        if(checkCity&&goodCity.length()>0) {
+            databaseHelper.addData(gCity);
+            checkCity=false;
+        }
+        else {
+            Toast.makeText(this, "Zle miasto ", Toast.LENGTH_SHORT).show();
+        }
+        refresh();
+    }
+    public void wrzuc2(String gCity) {
+        boolean isInBase = true;
+        databaseHelper = new DatabaseHelper(this);
+        Cursor data = databaseHelper.getData();
+        ArrayList<String> listData = new ArrayList<>();
+        while (data.moveToNext()) {
+
+            listData.add(data.getString(1));
+
+        }
+        for (int i = 0; i < listData.size(); i++) {
+            if (listData.contains(gCity)) {
+                isInBase = false;
+            }
+        }
+
+
+        if (isInBase) {
+            checkCity = true;
+        } else {
+
+            checkCity = false;
+        }
+        if (checkCity && goodCity.length() > 0) {
+            databaseHelper.addData(gCity);
+            checkCity = false;
+        } else {
+            Toast.makeText(this, "Zle miasto ", Toast.LENGTH_SHORT).show();
+        }
+        refresh();
     }
 }

@@ -7,6 +7,11 @@ public class Chanel implements JSONPopulator {
     private  Units units;
     private  Item item;
     private  Wind wind;
+    private  Location location;
+
+    public Location getLocation() {
+        return location;
+    }
 
     public Atmosphera getAtmosphera() {
         return atmosphera;
@@ -28,7 +33,8 @@ public class Chanel implements JSONPopulator {
     public void populate(JSONObject data) {
         units= new Units();
         units.populate(data.optJSONObject("units"));
-
+        location=new Location();
+        location.populate(data.optJSONObject("location"));
         wind = new Wind();
         wind.populate(data.optJSONObject("wind"));
 
